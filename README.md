@@ -1,1 +1,1 @@
-Trabajo Práctico de simulación de carrito de comras con modulos js.
+Trabajo Práctico de simulación de carrito de compras con modulos js.
