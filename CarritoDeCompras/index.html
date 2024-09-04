@@ -16,29 +16,51 @@
 
     <header>
         <nav class="navbar navbar-expand-lg bg-info">
-            <div class="container-fluid d-flex justify-content-center">
-                <a class="navbar-brand text-light" href="/index.html">AppTech</a>
+            <div class="container-fluid">
+                <a class="navbar-brand text-light fw-bold" href="/index.html">AppTech</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <div class="d-flex ms-auto">
+                        <button class="btn" id="el-carrito">
+                            <i class="bi bi-cart3 fs-3 text-light"></i>
+                        </button>
+                    </div>
+                </div>
             </div>
         </nav>
     </header>
 
 
-
-
+<main>
     <div class="container my-3">
         <h1 class="text-danger-emphasis text-center ">Productos disponibles</h1>
         <div class="row" id="fila-tarjetas">
         <!-- cards que muestran productos -->
         </div>
     </div>
+</main>
 
+    <div class="modal fade" id="carritoModal" tabindex="-1" aria-labelledby="carritoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="carritoModalLabel">Mis compras</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="carrito" class="row"></div> <!-- Aquí se mostrará el contenido del carrito -->
+                </div>
+                <div class="modal-footer">
+                    <h5 id="total">Total: US$0.00</h5>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <!-- ************** -->
-    <div class="container my-3">
-        <h2 class="text-center">Mis compras</h2>
-        <div id="carrito" class="row"></div>
-        <div id="total" class="text-end fw-bold fs-5"></div>
-    </div> 
 
 
 

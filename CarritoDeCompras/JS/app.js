@@ -5,6 +5,7 @@ import { Carrito } from "./clases.js";
 const carrito_1 = new Carrito();
 window.carrito_1 = carrito_1; 
 
+let btn_carrito = document.getElementById('el-carrito');
 
 
 carrito_1.agregarProducto(listaDeProductos[0]);
@@ -48,6 +49,8 @@ const verTodosLosProductos = (productos)=>{
 
 verTodosLosProductos(listaDeProductos);
 
+
+btn_carrito.addEventListener('click',()=>carrito_1.actualizarCarrito());
 
 
 

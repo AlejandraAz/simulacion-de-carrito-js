@@ -1,3 +1,4 @@
+const modal = new bootstrap.Modal(document.getElementById('carritoModal'));
 class Producto{
     constructor(nombre,categoria,img,stock,precio,codigo,marca,descripcion){
         this.nombre = nombre;
@@ -39,11 +40,12 @@ class Carrito{
         }
     }
 
+
     actualizarCarrito() {
         const div_carrito = document.getElementById('carrito');
         div_carrito.innerHTML = '';
         let total = 0;
-
+    
         this.productos.forEach((prod, index) => {
             total += prod.precio;  
             let item_carrito = document.createElement('div');
@@ -53,7 +55,6 @@ class Carrito{
                     <div class="d-flex align-items-center">
                         <img src="${prod.img}" alt="${prod.nombre}" class="img-fluid me-3" style="width: 50px;">
                         <div>
-                            <h5 class="mb-0">${prod.nombre}</h5>
                             <p class="mb-0 text-muted">${prod.marca} - US$ ${prod.precio.toFixed(2)}</p>
                         </div>
                     </div>
@@ -62,12 +63,13 @@ class Carrito{
             `;
             const btnEliminar = item_carrito.querySelector('button');
             btnEliminar.addEventListener('click', this.eliminarProducto.bind(this, index));
-    
             div_carrito.appendChild(item_carrito);
         });
-
+    
         document.getElementById('total').innerText = `Total: US$${total.toFixed(2)}`;
+        modal.show();
     }
+
 
     totalProductos() {
         const total = this.productos.reduce((acum, producto) => {
