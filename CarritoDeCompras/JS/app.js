@@ -7,11 +7,46 @@ window.carrito_1 = carrito_1;
 
 let btn_carrito = document.getElementById('el-carrito');
 
+// *****Comentado para hacer pruebas con localstorage
+// carrito_1.agregarProducto(listaDeProductos[0]);
+// carrito_1.agregarProducto(listaDeProductos[1]);
+// carrito_1.agregarProducto(listaDeProductos[2]);
 
-carrito_1.agregarProducto(listaDeProductos[0]);
-carrito_1.agregarProducto(listaDeProductos[1]);
-carrito_1.agregarProducto(listaDeProductos[2]);
 
+
+window.suscripcion =()=>{
+    Swal.fire({
+        title: '¡Gracias por suscribirte!',
+        icon: 'success',
+        confirmButtonText: 'Aceptar'
+    });
+    document.getElementById('suscrip').reset();
+}
+
+window.arrepentimiento = () => {
+    Swal.fire({
+        title: '¿Estás seguro?',
+        text: '¿Quieres arrepentirte de tu suscripción?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Sí, arrepentirme',
+        cancelButtonText: 'No, seguir suscrito'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            Swal.fire(
+                'Arrepentido!',
+                'Has cancelado tu suscripción.',
+                'success'
+            );
+        } else {
+            Swal.fire(
+                '¡Todo sigue igual!',
+                'Sigues suscrito.',
+                'info'
+            );
+        }
+    });
+}
 
 
 
