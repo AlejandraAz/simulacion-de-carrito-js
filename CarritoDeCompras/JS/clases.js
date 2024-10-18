@@ -35,7 +35,11 @@ class Carrito{
                 confirmButtonText: 'Eliminar',
                 cancelButtonText: 'Cancelar',
                 reverseButtons: true,
-                focusCancel: true
+                focusCancel: true,
+                // clase para cambio de color btn
+                customClass: {
+                    confirmButton: 'custom-confirm-button',
+                    }
             }).then((result) => {
                 if (result.isConfirmed) {
                     
@@ -62,7 +66,8 @@ class Carrito{
         let total = 0;
         if (this.productos.length === 0) {
             div_carrito.innerHTML = '<p class="text-center fw-bold text-uppercase text-warning-emphasis">No tienes productos añadidos.</p>';
-            totalProductosSpan.innerText = '0'; // Muestra 0 productos en el icono del carrito
+            // Muestra 0 productos en el icono del carrito
+            totalProductosSpan.innerText = '0'; 
         } else {
             this.productos.forEach((prod, index) => {
                 total += prod.precio;
